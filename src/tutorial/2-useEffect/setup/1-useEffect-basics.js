@@ -4,10 +4,15 @@ import React, { useState, useEffect } from 'react';
 // second parameter
 const UseEffectBasics = () => {
   const [value, setValue] = useState(0);
+
   useEffect(() => {
-    console.log('call useEffect');
-    document.title = `new messages(${value})`;
+    if (value > 5) {
+      console.log('call useEffect');
+      document.title = `new messages(${value})`;
+    }
+
   });
+
   console.log('render component');
   return <>
     <h2>{value}</h2>
